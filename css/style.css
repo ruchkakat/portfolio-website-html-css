@@ -78,7 +78,7 @@ h3 {
 
 /* header */
 #header {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url("../images/banner.jpg") center/cover no-repeat fixed;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url("../images/bg-main.png") center/cover no-repeat fixed;
   justify-content: flex-start;
   align-items: flex-end;
 }
@@ -159,7 +159,7 @@ h3 {
 
 /* work */
 #work {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url("../images/banner.jpg") center/cover no-repeat fixed;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url("../images/bg-work.jpg") center/cover no-repeat fixed;
   color: var(--light-color);
   filter: grayscale(50%);
 }
@@ -227,11 +227,11 @@ h3 {
 }
 
 #cert {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url("../images/banner.jpg") center/cover no-repeat fixed;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url("../images/bg-cert.jpg") center/cover no-repeat fixed;
   min-height: 65vh;
   display: flex;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
 }
 #cert .title h2 {
   color: var(--light-color);
@@ -354,13 +354,22 @@ h3 {
   .contact-left {
     width: 50%;
   }
-  
 }
 
 @media (max-width: 768px) {
-    .cert-flex-container {
-        flex-direction: column;
-      }
+  #header,
+  #work,
+  #cert {
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center top;
+  }
+  .cert-flex-container {
+    flex-direction: column;
+  }
+  .cert-flex-container img {
+    padding-bottom: 15px;
+  }
 }
 
 @media (min-width: 1200px) {
