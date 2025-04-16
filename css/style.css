@@ -229,6 +229,9 @@ h3 {
 #cert {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url("../images/banner.jpg") center/cover no-repeat fixed;
   min-height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
 }
 #cert .title h2 {
   color: var(--light-color);
@@ -236,22 +239,23 @@ h3 {
 #cert .title h2::after {
   background-color: var(--light-color);
 }
-.cert-grid > div {
-  height: 400px;
-  overflow: hidden;
+.cert-flex-container {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
   transition: var(--transition);
 }
-#cert .cert-grid img {
-    width: auto;
-    height: 100%;
-    object-fit: contain;
-    filter: grayscale(100%);
-  }
-.cert-grid > div:hover {
-  transform: scale(0.9);
+.cert-flex-container img {
+  filter: grayscale(100%);
 }
-#cert .cert-grid img:hover {
+.cert-flex-container > div:hover {
+  transform: scale(0.9);
+  transition: var(--transition);
+}
+.cert-flex-container img:hover {
   filter: grayscale(0%);
+  transition: var(--transition);
 }
 
 /* footer */
@@ -350,18 +354,13 @@ h3 {
   .contact-left {
     width: 50%;
   }
-  .cert-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  
 }
 
-@media (min-width: 992px) {
-  .cert-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .cert-grid > div {
-    height: 325px;
-  }
+@media (max-width: 768px) {
+    .cert-flex-container {
+        flex-direction: column;
+      }
 }
 
 @media (min-width: 1200px) {
